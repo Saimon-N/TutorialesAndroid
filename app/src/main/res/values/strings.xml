@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tutorial</string>
+    <string name="txt_valor1">Ingresa el primer valor</string>
+    <string name="txt_valor2">Ingresa el segundo valor</string>
+    <string name="rb1">Sumar</string>
+    <string name="rb2">Restar</string>
+    <string name="botton">Calcular</string>
+    <string name="TextView_resultado">Resultado</string>
+</resources>
