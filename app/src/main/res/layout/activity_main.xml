@@ -11,7 +11,7 @@
         android:id="@+id/valor1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/txt_valor1"
@@ -24,8 +24,8 @@
         android:id="@+id/valor2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/txt_valor2"
         android:inputType="number"
@@ -33,50 +33,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/valor1" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="269dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valor2">
-
-        <RadioButton
-            android:id="@+id/rb_sumar"
-            android:layout_width="232dp"
-            android:layout_height="47dp"
-            android:text="@string/rb1"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/rb_restar"
-            android:layout_width="231dp"
-            android:layout_height="43dp"
-            android:text="@string/rb2"
-            android:textSize="24sp" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/button2"
+    <CheckBox
+        android:id="@+id/check_suma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="48dp"
-        android:onClick="Calcular"
-        android:text="@string/botton"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/check_suma"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/valor2" />
+
+    <CheckBox
+        android:id="@+id/check_resta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/check_resta"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_suma" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:onClick="Calcular"
+        android:text="@string/button"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_resta" />
 
     <TextView
         android:id="@+id/resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="36dp"
-        android:text="@string/TextView_resultado"
+        android:text="@string/tv_resultado"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </android.support.constraint.ConstraintLayout>
