@@ -1,18 +1,20 @@
-//hacemos uso de un CheckBox
+//hacemos uso de un Spinner
+//nos permite crear una lista en un menu desplegable
 package com.example.tutorial;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private Spinner spinner1;
     private EditText et1, et2;
-    private CheckBox check1, check2;
     private TextView tv1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,35 +23,53 @@ public class MainActivity extends AppCompatActivity {
 
         et1=(EditText)findViewById(R.id.valor1);
         et2=(EditText)findViewById(R.id.valor2);
-        check1=(CheckBox)findViewById(R.id.check_suma);
-        check2=(CheckBox)findViewById(R.id.check_resta);
         tv1=(TextView)findViewById(R.id.resultado);
+        spinner1=(Spinner)findViewById(R.id.spinner);
+
+        //para el Spinner
+        String opciones[]={"Sumar","Restar","Multiplicar","Dividir"};
+        //modo normal
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,opciones);
+
+        //agregando modificaciones para spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner_item_modificaciones,opciones);
+        //R=carpeta "res",layout=carpeta "layout"
+
+        
+        spinner1.setAdapter(adapter);
     }
 
-    //funcion o metodo del button
+    //metodo del botton
     public void Calcular(View view)
     {
-        String valor1_String=et1.getText().toString();
-        String valor2_String=et2.getText().toString();
+        String valor1_string=et1.getText().toString();
+        String valor2_string=et2.getText().toString();
 
-        int valor1_int=Integer.parseInt(valor1_String);
-        int valor2_int=Integer.parseInt(valor2_String);
+        int valor1_int=Integer.parseInt(valor1_string);
+        int valor2_int=Integer.parseInt(valor2_string);
 
-        String resultado="";
-
-        if(check1.isChecked()==true)
+        String selccion=spinner1.getSelectedItem().toString();
+        if(selccion.equals("Sumar"))
         {
-            int suma=valor1_int + valor2_int;
-            resultado="La suma es :"+ suma +"  ";
-            //resultado="La suma es :"+String.valueOf(suma)+"  ";
-        }
-        if(check2.isChecked()==true)
+            int suma=valor1_int+valor2_int;
+            String resultado = String.valueOf(suma);
+            tv1.setText(resultado);
+        }else if(selccion.equals("Restar"))
         {
-            int resta=valor1_int - valor2_int;
-            resultado+="La resta es :"+resta;
-            //resultado+="La resta es :"+String.valueOf(resta);
+            int resta=valor1_int-valor2_int;
+            String resultado = String.valueOf(resta);
+            tv1.setText(resultado);
+        }else if(selccion.equals("Multiplicar"))
+        {
+            int multiplicar=valor1_int*valor2_int;
+            String resultado = String.valueOf(multiplicar);
+            tv1.setText(resultado);
+        }else if(selccion.equals("Dividir"))
+        {
+            int div=valor1_int/valor2_int;
+            String resultado = String.valueOf(div);
+            tv1.setText(resultado);
         }
-        tv1.setText(resultado);
     }
 }
 
