@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="txt_nombre">Nombre</string>
-    <string name="txt_password">Contraseña</string>
-    <string name="button">Registrar</string>
+    <string name="button">Siguiente</string>
+    <string name="tv1">Primer Activity</string>
+
+    <string name="button2">Anterior</string>
+    <string name="tv2">Segunto Activity</string>
 </resources>
