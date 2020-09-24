@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="button">Siguiente</string>
-    <string name="tv1">Primer Activity</string>
+    <string name="buttonEnviar">Siguiente</string>
+    <string name="etNombre1">Nombre</string>
 
-    <string name="button2">Anterior</string>
-    <string name="tv2">Segunto Activity</string>
+    <string name="buttonRegresar">Anterior</string>
+    <string name="etNombre2">Nombre</string>
 </resources>

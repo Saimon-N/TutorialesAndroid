@@ -1,4 +1,4 @@
-//Como pasar de un activity a otro
+//Como pasar  datos de un activity a otro
 
 package com.example.tutorial;
 
@@ -18,17 +18,23 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText et1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        et1=(EditText)findViewById(R.id.pt1);
     }
-    //metodo para el boton siguiene
-    public void Siguiente(View view)
+    //metodo para el boton
+    public void Enviar(View view)
     {
-        Intent sigguinte=new Intent(this, SegundaActivity.class);
-        startActivity(sigguinte);
+        //parte muy importante---->
+        Intent i=new Intent(this, SegundaActivity.class);
+        i.putExtra("batman", et1.getText().toString());//envia os datos de este activity hacia otro con una llave
+        startActivity(i);
+        //---->
     }
 }
