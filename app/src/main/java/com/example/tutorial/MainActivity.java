@@ -1,5 +1,5 @@
-//hacemos uso de un Botton de imagen
-//nos permite crear un botton con imagen
+//hacemos uso de un Edit text
+//nos permite colocar texto
 package com.example.tutorial;
 
 import android.support.v7.app.AppCompatActivity;
@@ -17,22 +17,35 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText etn, ctp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        etn=(EditText)findViewById(R.id.nombre);
+        ctp=(EditText)findViewById(R.id.password);
+    }
+    //creamos el metodo para el boton
+    public void Registrar(View view)
+    {
+        String nombre=etn.getText().toString();
+        String contrasenia=ctp.getText().toString();
+
+        if(nombre.length()==0)
+        {
+            Toast.makeText(this, "debes de agregar un nombre", Toast.LENGTH_SHORT).show();
+        }
+        if(contrasenia.length()==0)
+        {
+            Toast.makeText(this, "debes de agregar una contrasenia", Toast.LENGTH_SHORT).show();
+        }
+        if(nombre.length()!=0 && contrasenia.length()!=0)
+        {
+            Toast.makeText(this, "Registro de proceso", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    //metodo para los botones boton 1
-    public void Mensaje1(View view)
-    {
-        Toast.makeText(this,"La imagen 1",Toast.LENGTH_SHORT).show();
-    }
-    //metodo para los botones boton 2
-    public void Mensaje2(View view)
-    {
-        Toast.makeText(this,"La imagen 2",Toast.LENGTH_SHORT).show();
-    }
 }
