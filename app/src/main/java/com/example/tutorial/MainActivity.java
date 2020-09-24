@@ -1,4 +1,5 @@
-//Como pasar  datos de un activity a otro
+//Como pasar utilizar el Control WebView
+//navegar sin salir por internt sin salir de la aplicacion
 
 package com.example.tutorial;
 
@@ -26,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et1=(EditText)findViewById(R.id.pt1);
+        et1=(EditText)findViewById(R.id.web);
     }
-    //metodo para el boton
-    public void Enviar(View view)
+
+    //creamos el metodo para el botton;
+    public void Navegar(View view)
     {
-        //parte muy importante---->
         Intent i=new Intent(this, SegundaActivity.class);
-        i.putExtra("batman", et1.getText().toString());//envia os datos de este activity hacia otro con una llave
+        i.putExtra("batman", et1.getText().toString());
         startActivity(i);
-        //---->
     }
+
 }

@@ -5,26 +5,26 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class SegundaActivity extends AppCompatActivity {
-    private TextView tv1;
-
+    WebView wv1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda);
 
-        tv1=(TextView)findViewById(R.id.tv1);
-
-        String dato = getIntent().getStringExtra("batman");
-        tv1.setText("Hola"+dato);
+        wv1=(WebView)findViewById(R.id.wv1);
+        String URL=getIntent().getStringExtra("batman");
+        wv1.setWebViewClient(new WebViewClient());
+        wv1.loadUrl("http://"+URL);
     }
-
-    //metodo del boton de la segunda actividad
-    public void Regresar(View view)
+    //metodo para cerra
+    public void Cerra(View view)
     {
-        Intent j=new Intent(this, MainActivity.class);
-        startActivity(j);
+        finish();
     }
 }
