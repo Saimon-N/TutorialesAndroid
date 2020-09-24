@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="TextView">Resultado</string>
+    <string name="IB">informacion</string>
 </resources>
