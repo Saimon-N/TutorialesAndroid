@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="txt_Meil">Ingrese su email</string>
-    <string name="Botton1">Guardar</string>
+    <string name="txt_nombre">Nombre del contacto</string>
+    <string name="txt_datos">Datos del Contacto</string>
+    <string name="boton">Guardar</string>
+    <string name="boton1">Buscar</string>
+
 </resources>

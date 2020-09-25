@@ -1,4 +1,4 @@
-//Aplicamos un SharedPrferences
+//Hacemos una agenda con SharedPrferences
 //nos ayuda para almecenear datos pero de forma "temporar"
 
 package com.example.tutorial;
@@ -21,28 +21,44 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText et1;
+    private EditText et1, et2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        et1=(EditText)findViewById(R.id.mail);
-
-        //como utilizar el SharedPrferences;
-        SharedPreferences Guason= getSharedPreferences("batman", Context.MODE_PRIVATE);
-        et1.setText(Guason.getString("mail",""));
+        et1=(EditText)findViewById(R.id.nombre);
+        et2=(EditText)findViewById(R.id.datos);
     }
-
-    //crear el metodo del boton
+    //creamos el metodo guardar
     public void Guardar(View view)
     {
-        SharedPreferences preferncias=getSharedPreferences("batman", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferncias.edit();
-        editor.putString("mail", et1.getText().toString());
+        String nombre=et1.getText().toString();
+        String datos=et2.getText().toString();
+
+        SharedPreferences preferencia= getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferencia.edit();
+        editor.putString(nombre, datos);
+
         editor.commit();
-        finish();
+        Toast.makeText(this,"El contacto ha sido guardado",Toast.LENGTH_SHORT);
+    }
+
+    //creamos el metodo buscar
+    public void Buscar(View view)
+    {
+        String nombre = et1.getText().toString();
+
+        SharedPreferences preferrencia2 = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        String datos=preferrencia2.getString(nombre, "");
+
+        if(datos.length()==0)
+        {
+            Toast.makeText(this, "No se encontro ningun registro",Toast.LENGTH_SHORT);
+        }else
+        {
+            et2.setText(datos);
+        }
     }
 }
