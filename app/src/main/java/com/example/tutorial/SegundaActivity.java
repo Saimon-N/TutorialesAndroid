@@ -11,20 +11,10 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class SegundaActivity extends AppCompatActivity {
-    WebView wv1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segunda);
-
-        wv1=(WebView)findViewById(R.id.wv1);
-        String URL=getIntent().getStringExtra("batman");
-        wv1.setWebViewClient(new WebViewClient());
-        wv1.loadUrl("http://"+URL);
-    }
-    //metodo para cerra
-    public void Cerra(View view)
-    {
-        finish();
     }
 }

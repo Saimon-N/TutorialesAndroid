@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="Web">Direccion de la Pagina</string>
-    <string name="Botton1">Ir al sitio web</string>
-    <string name="Botton2">cerrar</string>
+    <string name="txt_Meil">Ingrese su email</string>
+    <string name="Botton1">Guardar</string>
 </resources>

@@ -1,9 +1,11 @@
-//Como pasar utilizar el Control WebView
-//navegar sin salir por internt sin salir de la aplicacion
+//Aplicamos un SharedPrferences
+//nos ayuda para almecenear datos pero de forma "temporar"
 
 package com.example.tutorial;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,15 +29,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et1=(EditText)findViewById(R.id.web);
+        et1=(EditText)findViewById(R.id.mail);
+
+        //como utilizar el SharedPrferences;
+        SharedPreferences Guason= getSharedPreferences("batman", Context.MODE_PRIVATE);
+        et1.setText(Guason.getString("mail",""));
     }
 
-    //creamos el metodo para el botton;
-    public void Navegar(View view)
+    //crear el metodo del boton
+    public void Guardar(View view)
     {
-        Intent i=new Intent(this, SegundaActivity.class);
-        i.putExtra("batman", et1.getText().toString());
-        startActivity(i);
+        SharedPreferences preferncias=getSharedPreferences("batman", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferncias.edit();
+        editor.putString("mail", et1.getText().toString());
+        editor.commit();
+        finish();
     }
-
 }
