@@ -8,54 +8,29 @@
 
 
     <EditText
-        android:id="@+id/nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:id="@+id/bitacora"
+        android:layout_width="374dp"
+        android:layout_height="399dp"
         android:layout_marginTop="16dp"
+        android:background="#000000"
         android:ems="10"
-        android:hint="@string/txt_nombre"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/datos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="@string/txt_datos"
-        android:inputType="textMultiLine"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
-
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:onClick="Guardar"
         android:text="@string/boton"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datos" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:onClick="Buscar"
-        android:text="@string/boton1"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/datos" />
+        app:layout_constraintTop_toBottomOf="@+id/bitacora" />
 </android.support.constraint.ConstraintLayout>
