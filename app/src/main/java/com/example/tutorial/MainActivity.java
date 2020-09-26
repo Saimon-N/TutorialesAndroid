@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString(nombre, datos);
 
         editor.commit();
-        Toast.makeText(this,"El contacto ha sido guardado",Toast.LENGTH_SHORT);
+        Toast.makeText(this,"El contacto ha sido guardado",Toast.LENGTH_SHORT).show();
     }
 
     //creamos el metodo buscar
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(datos.length()==0)
         {
-            Toast.makeText(this, "No se encontro ningun registro",Toast.LENGTH_SHORT);
+            Toast.makeText(this, "No se encontro ningun registro",Toast.LENGTH_SHORT).show();
         }else
         {
             et2.setText(datos);
