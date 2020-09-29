@@ -1,6 +1,7 @@
-//Disenio Lineal (LinearLayout)
-//es un grupo de vista que alinea todos los campos secundarios en una unica direccion,
-// tanto de manera vertical u horizontal
+//Diseñio de un tabla (TableLayout)
+//permite agrupar a los compenentes en filas y columnas
+//tableRow que es el que agrupa aomponentes en filas
+
 
 package com.example.tutorial;
 

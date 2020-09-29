@@ -1,7 +1,23 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="txt_email">Correo Electronico</string>
-    <string name="txt_password">Contraseña</string>
-    <string name="buton">Ingresar</string>
+    <string name="uno">1</string>
+    <string name="dos">2</string>
+    <string name="tres">3</string>
+    <string name="cuatro">4</string>
+    <string name="cinco">5</string>
 
+    <string name="seis">6</string>
+    <string name="siete">7</string>
+    <string name="ocho">8</string>
+    <string name="nueve">9</string>
+    <string name="cero">0</string>
+
+    <string name="suma">+</string>
+    <string name="resta">-</string>
+    <string name="mutilplicar">*</string>
+    <string name="division">/</string>
+    <string name="resultado">=</string>
+
+    <string name="RestaurarValores">Restaurar Valores</string>
+    <string name="TTextView">0</string>
 </resources>
